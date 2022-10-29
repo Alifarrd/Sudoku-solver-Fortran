@@ -1,15 +1,16 @@
 program Sudoku
-integer::i,j,c,zi,zj,ki,kj,n,counter,ce
-real,allocatable::k(:,:),ziro(:,:),hk(:),ziroh(:,:),ziro3(:,:)
+implicit none
+integer::i,j,c,zi,zj,ki,kj,n,counter,ce,summ,ix,ii,m,it
+real,allocatable::k(:,:),ziro(:,:),hk(:),ziroh(:,:),ziro3(:,:),solve(:,:)
 OPEN(UNIT=20,FILE='Sudoku.txt',STATUS='old',ACTION='read')
 OPEN(UNIT=40,FILE='Sudoku-ANS.txt',STATUS='replace',ACTION='write')
 
-ALLOCATE (k(9,9),hk(9))
+ALLOCATE (k(9,9),hk(9),solve(9,9))
 
 !---------------------------------------------------[Read the Sudoku]
 do i=1,9
   do j = 1,9
-read(20,*)k(i,j)
+read(20,*)solve(i,j)
   end do
 end do
 
@@ -17,7 +18,7 @@ end do
 c=0
 do i=1,9
   do j = 1,9
-    if (k(i,j)==0)then
+    if (solve(i,j)==0)then
       c=c+1
       end if
   end do
@@ -32,7 +33,7 @@ ALLOCATE (ziro(c,12),ziroh(c,12),ziro3(c,12))
 m=1
 do i=1,9
   do j=1,9
-    if (k(i,j)==0)then
+    if (solve(i,j)==0)then
       ziro(m,1)=i
       ziro(m,2)=j
       do ii=1,9
@@ -43,14 +44,30 @@ do i=1,9
  end if
  end do
  end do
+k(:,:)=solve(:,:) 
+
+do !it=1,2
+read(*,*)
+!$$$$$$ write(40,*)"======================================start"
+!$$$$$$ do i=1,9  
+!$$$$$$ write(40,*)k(i,:)
+!$$$$$$   end do
+
+do i=1,c
+  do ii=1,9
+    ziro(i,ii+2)=ii
+    end do
+    end do
+ziro(:,12)=0
 ziroh(:,:)=ziro(:,:)
 ziro3(:,:)=ziro(:,:)
-
 !---------------------------------------------------[vertical Move]
 
 do ix=1,c
+if (ziro(ix,1)/=0)then
 zi=ziro(ix,1)
 zj=ziro(ix,2)
+
 hk(:)=k(zi,:) 
   do n=1,9
   do j =1,9
@@ -59,6 +76,11 @@ hk(:)=k(zi,:)
       end if
       end do
           end do
+
+!$$$$$$            if (it==2 .and. ix==1)then
+!$$$$$$    write(40,*)ziro(1,:)
+!$$$$$$    end if
+          end if  
 end do
 
 !$$$$$$ do i=1,c
@@ -70,6 +92,7 @@ end do
 !$$$$$$           end do
 !---------------------------------------------------[Horizental Move]
 do ix=1,c
+if (ziro(ix,1)/=0)then
 zi=ziroh(ix,1)
 zj=ziroh(ix,2)
 hk(:)=k(:,zj) 
@@ -80,7 +103,15 @@ hk(:)=k(:,zj)
       end if
       end do
           end do
-end do
+end if
+
+
+
+
+!$$$$$$            if (it==2 .and. ix==1)then
+!$$$$$$    write(40,*)ziroh(1,:)
+!$$$$$$    end if
+  end do
 
 !$$$$$$ do i=1,c
 !$$$$$$  do ii=1,9
@@ -92,6 +123,7 @@ end do
 !---------------------------------------------------[3*3 Move]
 
 do ix=1,c
+if (ziro(ix,1)/=0)then  
 zi=ziro3(ix,1)
 zj=ziro3(ix,2)
 
@@ -146,7 +178,14 @@ do i=ki,ki+2
       end if
       end do
           end do
-end do
+end if
+
+
+
+!$$$$$$            if (it==2 .and. ix==1)then
+!$$$$$$    write(40,*)ziro3(1,:)
+!$$$$$$    end if
+  end do
 
 !$$$$$$ do i=1,c
 !$$$$$$  do ii=1,9
@@ -160,22 +199,26 @@ end do
 
 do j=1,c  
   do i=1,9
+  if (ziro(j,1)/=0)then  
   if ((ziro(j,i+2)==0).or.(ziroh(j,i+2)==0).or.(ziro3(j,i+2)==0))then
     ziro(j,i+2)=0
     ziroh(j,i+2)=0
     ziro3(j,i+2)=0
+end if
 end if
      end do
  end do     
       
 do i=1,c
  do ii=1,9
+   if (ziro(i,1)/=0)then
         if (ziro(i,ii+2)/=0)then
           ziro(i,12)=ziro(i,12)+1
          else if (ziroh(i,ii+2)/=0)then
           ziroh(i,12)=ziroh(i,12)+1         
          else if (ziro3(i,ii+2)/=0)then
           ziro3(i,12)=ziro3(i,12)+1 
+end if
 end if
           end do
           end do
@@ -184,13 +227,15 @@ end if
 
 do i=1,c
   summ=0
-if (ziro(i,12)==1)then
+if (ziro(i,12)==1 .and. ziro(i,1)/=0)then
   do ii=1,9
     summ=summ+ziro(i,ii+2)
     end do
     zi=ziro(i,1)
     zj=ziro(i,2)
-    k(zi,zj)=summ
+    k(zi,zj)= summ
+      ziro(i,1)=0
+  	  ziro(i,2)=0
     end if
 end do
 
@@ -204,11 +249,26 @@ do i=1,9
 end do
 
 
-write(*,*)'c=',c,'ce=',ce
+write(*,*)'c=',c,'','ce=',ce
 
 
+
+if (ce==0)then
+ 
 do i=1,9
   write(40,*)k(i,:)
   end do
+
+  exit
+
+  end if
+
+end do
+
+
+
+
+  
+
 
 end 
