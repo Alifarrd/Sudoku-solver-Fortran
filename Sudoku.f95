@@ -1,19 +1,18 @@
 program Sudoku
-integer::i,j,c,zi,zj,ki,kj,n,counter
-real,allocatable::k(:,:),ziro(:,:),hk(:),numbers(:),ziroh(:,:),ziro3(:,:)
+integer::i,j,c,zi,zj,ki,kj,n,counter,ce
+real,allocatable::k(:,:),ziro(:,:),hk(:),ziroh(:,:),ziro3(:,:)
 OPEN(UNIT=20,FILE='Sudoku.txt',STATUS='old',ACTION='read')
 OPEN(UNIT=40,FILE='Sudoku-ANS.txt',STATUS='replace',ACTION='write')
 
-ALLOCATE (k(9,9),hk(9),numbers(9))
-do i =1,9
-  numbers(i)=i
-  end do
+ALLOCATE (k(9,9),hk(9))
+
 !---------------------------------------------------[Read the Sudoku]
 do i=1,9
   do j = 1,9
 read(20,*)k(i,j)
   end do
 end do
+
 !---------------------------------------------------[count the ziroes]
 c=0
 do i=1,9
@@ -25,6 +24,11 @@ do i=1,9
 end do
 !---------------------------------------------------[Find the ziroes]
 ALLOCATE (ziro(c,12),ziroh(c,12),ziro3(c,12))
+
+
+
+
+
 m=1
 do i=1,9
   do j=1,9
@@ -41,7 +45,9 @@ do i=1,9
  end do
 ziroh(:,:)=ziro(:,:)
 ziro3(:,:)=ziro(:,:)
+
 !---------------------------------------------------[vertical Move]
+
 do ix=1,c
 zi=ziro(ix,1)
 zj=ziro(ix,2)
@@ -55,13 +61,13 @@ hk(:)=k(zi,:)
           end do
 end do
 
-do i=1,c
- do ii=1,9
-        if (ziro(i,ii+2)/=0)then
-          ziro(i,12)=ziro(i,12)+1
-          end if
-          end do
-          end do
+!$$$$$$ do i=1,c
+!$$$$$$  do ii=1,9
+!$$$$$$         if (ziro(i,ii+2)/=0)then
+!$$$$$$           ziro(i,12)=ziro(i,12)+1
+!$$$$$$           end if
+!$$$$$$           end do
+!$$$$$$           end do
 !---------------------------------------------------[Horizental Move]
 do ix=1,c
 zi=ziroh(ix,1)
@@ -76,13 +82,13 @@ hk(:)=k(:,zj)
           end do
 end do
 
-do i=1,c
- do ii=1,9
-        if (ziroh(i,ii+2)/=0)then
-          ziroh(i,12)=ziroh(i,12)+1
-          end if
-          end do
-          end do
+!$$$$$$ do i=1,c
+!$$$$$$  do ii=1,9
+!$$$$$$         if (ziroh(i,ii+2)/=0)then
+!$$$$$$           ziroh(i,12)=ziroh(i,12)+1
+!$$$$$$           end if
+!$$$$$$           end do
+!$$$$$$           end do
 !---------------------------------------------------[3*3 Move]
 
 do ix=1,c
@@ -142,13 +148,13 @@ do i=ki,ki+2
           end do
 end do
 
-do i=1,c
- do ii=1,9
-        if (ziro3(i,ii+2)/=0)then
-          ziro3(i,12)=ziro3(i,12)+1
-          end if
-          end do
-          end do
+!$$$$$$ do i=1,c
+!$$$$$$  do ii=1,9
+!$$$$$$         if (ziro3(i,ii+2)/=0)then
+!$$$$$$           ziro3(i,12)=ziro3(i,12)+1
+!$$$$$$           end if
+!$$$$$$           end do
+!$$$$$$           end do
 
 !---------------------------------------------------[compare 3 marrixes]       
 
@@ -177,9 +183,32 @@ end if
 
 
 do i=1,c
-write(40,*)ziro(i,1),ziro(i,2),ziro(i,12)
+  summ=0
+if (ziro(i,12)==1)then
+  do ii=1,9
+    summ=summ+ziro(i,ii+2)
+    end do
+    zi=ziro(i,1)
+    zj=ziro(i,2)
+    k(zi,zj)=summ
+    end if
+end do
+
+ce=0
+do i=1,9
+  do j = 1,9
+    if (k(i,j)==0)then
+      ce=ce+1
+      end if
+  end do
 end do
 
 
+write(*,*)'c=',c,'ce=',ce
+
+
+do i=1,9
+  write(40,*)k(i,:)
+  end do
 
 end 
