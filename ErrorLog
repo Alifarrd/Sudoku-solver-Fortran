@@ -1,3 +1,6 @@
-C:\Users\Ali Fard\Desktop\Sudoku\Sudoku.F95(19) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Desktop\Sudoku\Sudoku.F95(29) : warning 179 - Comparing floating point quantities for equality may give misleading results
-Creating executable: C:\Users\Ali Fard\Desktop\Sudoku\Sudoku.EXE
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(2) : warning 242 - Variable ZJ has been given a value but never used
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(21) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(31) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(50) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(59) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+Creating executable: C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.EXE
