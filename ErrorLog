@@ -1,18 +1,18 @@
 C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(3) : warning 197 - Variable IT has been declared but not used
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(21) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(34) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(53) : warning 179 - Comparing floating point quantities for inequality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(60) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(70) : warning 179 - Comparing floating point quantities for inequality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(76) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(86) : warning 179 - Comparing floating point quantities for inequality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(135) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(149) : warning 179 - Comparing floating point quantities for inequality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(150) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(161) : warning 179 - Comparing floating point quantities for inequality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(162) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(23) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(36) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(55) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(62) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(72) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(78) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(88) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(137) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(151) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(152) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(163) : warning 179 - Comparing floating point quantities for inequality may give misleading results
 C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(164) : warning 179 - Comparing floating point quantities for inequality may give misleading results
 C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(166) : warning 179 - Comparing floating point quantities for inequality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(176) : warning 179 - Comparing floating point quantities for equality may give misleading results
-C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(192) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(168) : warning 179 - Comparing floating point quantities for inequality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(178) : warning 179 - Comparing floating point quantities for equality may give misleading results
+C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.F95(194) : warning 179 - Comparing floating point quantities for equality may give misleading results
 Creating executable: C:\Users\Ali Fard\Documents\GitHub\Sudoku-solver-Fortran\Sudoku.EXE

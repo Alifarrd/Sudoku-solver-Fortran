@@ -2,7 +2,9 @@ program Sudoku
 implicit none
 integer::i,j,c,zi,zj,ki,kj,n,counter,ce,summ,ix,ii,m,it,cep
 real,allocatable::k(:,:),ziro(:,:),hk(:),ziroh(:,:),ziro3(:,:)
-OPEN(UNIT=20,FILE='Sudoku.txt',STATUS='old',ACTION='read')
+!OPEN(UNIT=20,FILE='SudokuE.txt',STATUS='old',ACTION='read')
+OPEN(UNIT=20,FILE='SudokuM.txt',STATUS='old',ACTION='read')
+!OPEN(UNIT=20,FILE='SudokuH.txt',STATUS='old',ACTION='read')
 OPEN(UNIT=40,FILE='Sudoku-ANS.txt',STATUS='replace',ACTION='write')
 
 ALLOCATE (k(9,9),hk(9))
@@ -205,6 +207,9 @@ do i=1,9
   exit
 else if (cep==ce)then
   write(*,*)'ERROR!'
+  do i = 1,c
+    write(*,*)ziro(i,1),ziro(i,2),ziro(i,12)
+    end do
   exit
   end if
 
